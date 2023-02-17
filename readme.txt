@@ -5,3 +5,6 @@ Como utilizar el history y los parametros, tener en cuenta que funciona con la v
 Tutorial
 
 https://www.youtube.com/watch?v=kbJAhvzyw-E&t=1018s
+
+Fondos degradados en CSS
+https://uigradients.com/#JShine
