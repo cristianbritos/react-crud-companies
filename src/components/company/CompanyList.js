@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import * as CompanyServer from "./CompanyServer";
+import CompanyItem from "./CompanyItem";
 
 function CompanyList() {
   const [companies, setCompanies] = useState([]);
@@ -10,7 +11,6 @@ function CompanyList() {
       const res = await CompanyServer.listCompanies();
       const data = await res.json()      
       setCompanies(data.companies)
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -19,9 +19,9 @@ function CompanyList() {
     listCompanies();
   },[]);
   return (
-    <div>
+    <div className="row">
       {companies.map((company) => (
-        <h1>{company.name}</h1>
+        <CompanyItem key={company.id} company={company} listCompanies={listCompanies}/>
       ))}
     </div>
   );
